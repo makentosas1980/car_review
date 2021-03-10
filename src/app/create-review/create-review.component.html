@@ -1,0 +1,82 @@
+<div class="container">
+  <div>
+    <h1>Sukurti atsiliepimą</h1>
+  </div>
+
+  <form [formGroup]="carForm">
+    <div class="left">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Automobilio markė</mat-label>
+        <select matNativeControl [formControl]="markControl" name="mark">
+          <option value=""></option>
+          <option *ngFor="let mark of carMarks" [value]="mark.id">
+            {{mark.value}}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Automobilio modelis</mat-label>
+        <select matNativeControl [formControl]="modelControl" name="model">
+          <option value=""></option>
+          <option *ngFor="let model of carMarks[markControl.value].models" [value]="model">
+            {{ model }}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Pagaminimo metai</mat-label>
+        <select matNativeControl [formControl]="yearControl" name="year">
+          <option value=""></option>
+          <option *ngFor="let year of years" [value]="year">
+            {{ year }}
+          </option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="rigth">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Variklio tips</mat-label>
+        <select matNativeControl [formControl]="engineControl" name="engine">
+          <option value=""></option>
+          <option *ngFor="let type of engines" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Kuro tips</mat-label>
+        <select matNativeControl [formControl]="fuelControl" name="fuel">
+          <option value=""></option>
+          <option *ngFor="let type of fuels" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Pavarų dėžė</mat-label>
+        <select matNativeControl [formControl]="gearboxControl" name="gearbox">
+          <option value=""></option>
+          <option *ngFor="let type of gearbox" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+      </mat-form-field>
+    </div>
+
+    <div class="bottom">
+      <mat-form-field appearance="fill" id="text-area" floatLabel="always">
+        <mat-label>Komentaras</mat-label>
+        <textarea matInput matNativeControl [formControl]="commentControl" name="comment">
+        </textarea>
+      </mat-form-field>
+    </div>
+
+  </form>
+  <div>
+    <button mat-raised-button (click)="submitForm()">Patvirtinti</button>
+  </div>
+</div>

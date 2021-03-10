@@ -1,0 +1,57 @@
+<div>
+  <form [formGroup]="secondForm">
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Automobilio markė</mat-label>
+      <select matNativeControl formControlName="carMarkValueToGet"
+      (change)="selectMark($event)" #mark>
+        <option value=""></option>
+        <option *ngFor="let mark of allCarMarks" [value]="mark">
+          {{ mark }}
+        </option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" *ngIf="showSelectedCarModels" floatLabel="always">
+      <mat-label>Automobilio modelis</mat-label>
+      <select matNativeControl formControlName="carModelValueToGet"
+      (change)="selectModel()">
+        <option value=""></option>
+        <option *ngFor="let car of allCarModels" [value]="car">
+          {{ car }}
+        </option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Pagaminimo metai</mat-label>
+      <select matNativeControl formControlName="carYearValueToGet"
+      (change)="selectYear()">
+        <option value=""></option>
+        <option *ngFor="let car of allCarYears" [value]="car">
+          {{ car }}
+        </option>
+      </select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="container">
+  <div *ngFor="let review of reviewList">
+    <mat-card class="review-card">
+      <div class="header">
+        <div class="title">{{ review.mark }}-{{ review.model }}</div>
+        <div class="subtitle">{{ review.year }}</div>
+      </div>
+      <hr>
+      <div class="car-details">
+        <h5>{{ review.engine }}l</h5>
+        <h5>{{ review.fuel }}</h5>
+        <h5>{{ review.gearbox }}</h5>
+      </div>
+      <hr>
+      <mat-card-content class="content">
+        <p>{{ review.comment }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

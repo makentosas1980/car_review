@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "id": "0",
+      "value": "Audi",
+      "models": [
+        "A4",
+        "A6"
+      ]
+    },
+    {
+      "id": "1",
+      "value": "BMW",
+      "models": [
+        "320",
+        "520"
+      ]
+    },
+    {
+      "id": "2",
+      "value": "Citroen",
+      "models": [
+        "C5",
+        "C3"
+      ]
+    },
+    {
+      "id": "3",
+      "value": "Peugeot",
+      "models": [
+        "3008",
+        "5008"
+      ]
+    },
+    {
+      "id": "4",
+      "value": "Volvo",
+      "models": [
+        "CX90"
+      ]
+    }
+  ]
+}

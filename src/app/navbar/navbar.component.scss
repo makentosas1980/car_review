@@ -1,0 +1,49 @@
+$colorBlack: #1d1d1f;
+$colorWhite: #ffffff;
+$colorGrey: #d2d2d2;
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: $colorBlack;
+}
+
+header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.logo {
+  height: 44px;
+  float: left;
+  margin: 8px 0;
+  border: 1px solid wheat;
+}
+
+nav {
+  float: right;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 20px;
+  a {
+    color: $colorGrey;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      color: $colorWhite;
+    }
+  }
+}
